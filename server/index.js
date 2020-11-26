@@ -36,7 +36,19 @@ app.get('/item/:item_id/images', (req, res)=>{
       res.status(200).send(data.rows);
     }
   });
-})
+});
+
+app.get('/item/images/distinct', (req, res) => {
+  pool.query('SELECT DISTINCT ON (item_id) item_id, image_url FROM image_urls', (err, data) => {
+    if (err) {
+      res.status(400).send(err);
+    } else {
+      res.status(200).send(data)
+    }
+  });
+});
+
+
 
 
 
