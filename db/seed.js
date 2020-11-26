@@ -1,22 +1,5 @@
 const db = require('./index.js');
-const S3 = require('./s3FileUpload.js')
-
-
-//async function urls()
-//let url = [];
-  //urls = await S3.getUrlsS3();
-  //console.log(url);
-
-
-          // ['https://festy-images.s3-us-west-1.amazonaws.com/1_001.jpg',
-          //   'https://festy-images.s3-us-west-1.amazonaws.com/1_002.jpg',
-          //   'https://festy-images.s3-us-west-1.amazonaws.com/1_003.jpg',
-          //   'https://festy-images.s3-us-west-1.amazonaws.com/1_004.jpg',
-          //   'https://festy-images.s3-us-west-1.amazonaws.com/1_005.jpg',
-          // ];
-
-
-
+const S3 = require('./s3FileUpload.js');
 
 const seed =  async () => {
   let urls = await S3.getUrlsS3();

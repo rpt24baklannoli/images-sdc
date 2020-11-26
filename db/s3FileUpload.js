@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const AWS = require('AWS-sdk');
+const AWS = require('aws-sdk');
 
 AWS.config.loadFromPath('/Users/brian.vu/HackReactor/RPT24/fetsyItemImages/config/AWS_Config.json');
 
