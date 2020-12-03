@@ -32,7 +32,6 @@ app.get('/item/:item_id/images', (req, res)=>{
     if (err){
       res.status(400).send(err);
     } else {
-      console.log(data.rows);
       res.status(200).send(data.rows);
     }
   });

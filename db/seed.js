@@ -2,6 +2,7 @@ const db = require('./index.js');
 const S3 = require('./s3FileUpload.js');
 
 const seed =  async () => {
+
   let urls = await S3.getUrlsS3();
   for (let i = 0; i < urls.length; i++){
     let values = [parseInt(urls[i].slice(48, urls[i].indexOf('_'))), urls[i]];
