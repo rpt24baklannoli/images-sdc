@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import Slider from './components/Slider.jsx';
 import axios from 'axios';
 import { useParams } from 'react-router';
-import "core-js/stable";
-import "regenerator-runtime/runtime";
 
 
 let getImagesById =  ()=>{

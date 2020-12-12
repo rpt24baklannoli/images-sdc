@@ -15,7 +15,7 @@ const Arrow = ({ direction, handleClick }) => (
       height: 50px;
       width: 50px;
       justify-content: center;
-      background: grey;
+      background: white;
       border-radius: 50%;
       cursor: pointer;
       align-items: center;
@@ -28,10 +28,17 @@ const Arrow = ({ direction, handleClick }) => (
         &:focus {
           outline: 0;
         }
+
       }
     `}
   >
-    {direction === 'right' ? <img src={rightArrow} /> : <img src={leftArrow} />}
+    {direction === 'right' ? <img src={rightArrow} css={`
+      max-width:100%;
+      max-height:100%;
+    `}/> : <img src={leftArrow} css={`
+    max-width:100%;
+    max-height:100%;
+  `}/>}
   </div>
 )
 
