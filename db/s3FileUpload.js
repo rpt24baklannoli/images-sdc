@@ -70,7 +70,7 @@ async function getUrlsS3 (URL_ARRAY = []) {
   //console.log('URL_ARRAY, ', URL_ARRAY)
 
   if (URL_ARRAY.length === response.Contents.length){
-    console.log('LENGTH ', response.Contents.length);
+    //console.log('URL_ARRAY ', URL_ARRAY);
     return URL_ARRAY;
   }
 }
