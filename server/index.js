@@ -11,6 +11,8 @@ app.use(express.static(__dirname + '/../react-client/dist'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json());
 
+app.use('/items/:item_id', express.static('react-client/dist'));
+
 app.get('/item/images', (req, res)=>{
   pool.query('SELECT * FROM image_urls', (err, data) => {
     if (err){
@@ -46,10 +48,6 @@ app.get('/item/images/distinct', (req, res) => {
     }
   });
 });
-
-
-
-
 
 
 let storage = multer.memoryStorage();
