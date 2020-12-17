@@ -14,7 +14,7 @@ let getImagesById =  ()=>{
   axios.get(`/item/${id}/images`)
   .then((res)=>{
     console.log('DATA ', res.data);
-    ReactDOM.render(<Slider slides={res.data}/>, document.querySelector('body'));
+    ReactDOM.render(<Slider slides={res.data}/>, document.getElementById('images'));
   });
 }
 

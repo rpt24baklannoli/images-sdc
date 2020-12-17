@@ -63,6 +63,7 @@ async function getUrlsS3 (URL_ARRAY = []) {
   };
 
   const response = await s3bucket.listObjectsV2(params).promise();
+
   URL_ARRAY = response.Contents.map( (file) => {
     let complete_url = BUCKET_URL+file.Key;
     return complete_url;
