@@ -1,8 +1,8 @@
 
 import React from 'react'
 /** @jsx jsx */ import { css, jsx } from '@emotion/react'
-import leftArrow from '../img/left-arrow.png'
-import rightArrow from '../img/right-arrow.png'
+// import leftArrow from '../img/left-arrow.png'
+//import rightArrow from '../img/right-arrow.png'
 
 const Arrow = ({ direction, handleClick }) => (
   <div
@@ -34,14 +34,14 @@ const Arrow = ({ direction, handleClick }) => (
   >
     {direction === 'right' ?
 
-    <img src={rightArrow} css={`
+    <img src={'https://festy-images.s3-us-west-1.amazonaws.com/right-arrow.png'} css={`
       max-width:100%;
       max-height:100%;
     `}/>
 
     :
 
-    <img src={leftArrow} css={`
+    <img src={"https://festy-images.s3-us-west-1.amazonaws.com/left-arrow.png"} css={`
     max-width:100%;
     max-height:100%;
   `}/>}
