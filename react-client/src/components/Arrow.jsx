@@ -32,10 +32,16 @@ const Arrow = ({ direction, handleClick }) => (
       }
     `}
   >
-    {direction === 'right' ? <img src={rightArrow} css={`
+    {direction === 'right' ?
+
+    <img src={rightArrow} css={`
       max-width:100%;
       max-height:100%;
-    `}/> : <img src={leftArrow} css={`
+    `}/>
+
+    :
+
+    <img src={leftArrow} css={`
     max-width:100%;
     max-height:100%;
   `}/>}
