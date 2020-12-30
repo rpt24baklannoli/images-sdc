@@ -5,8 +5,8 @@ const AWS = require('aws-sdk');
 AWS.config.loadFromPath('/Users/brian.vu/HackReactor/RPT24/fetsyItemImages/config/AWS_Config.json');
 
 const BUCKET_NAME = 'festy-images';
-const IAM_USER_KEY = AWS.config.credentials.accessKeyId;
-const IAM_USER_SECRET = AWS.config.credentials.secretAccessKey;
+const IAM_USER_KEY = AWS.config.credentials.accessKeyId || process.env.accessKey;
+const IAM_USER_SECRET = AWS.config.credentials.secretAccessKey || process.env.secretKey;
 
 let uploadToS3 = (req, res)=>{
 

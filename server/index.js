@@ -25,11 +25,7 @@ app.get('/item/images', (req, res)=>{
 
 
 app.get('/item/:item_id/images', (req, res)=>{
-  //console.log(req.params);
-  //console.log()
-  //let text = 'SELECT * FROM image_urls WHERE image_id = ($1)'
   const values = [`${req.params.item_id}`];
-  //console.log(values);
   pool.query(`SELECT * FROM image_urls WHERE item_id = ${req.params.item_id}`, (err,data) => {
     if (err){
       res.status(400).send(err);

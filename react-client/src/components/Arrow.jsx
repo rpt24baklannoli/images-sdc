@@ -1,8 +1,6 @@
 
 import React from 'react'
 /** @jsx jsx */ import { css, jsx } from '@emotion/react'
-// import leftArrow from '../img/left-arrow.png'
-//import rightArrow from '../img/right-arrow.png'
 
 const Arrow = ({ direction, handleClick }) => (
   <div
