@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const AWS = require('aws-sdk');
 
-AWS.config.loadFromPath('/Users/brian.vu/HackReactor/RPT24/fetsyItemImages/config/AWS_Config.json');
+//AWS.config.loadFromPath('/Users/brian.vu/HackReactor/RPT24/fetsyItemImages/config/AWS_Config.json');
 
 const BUCKET_NAME = 'festy-images';
 const IAM_USER_KEY = AWS.config.credentials.accessKeyId || process.env.accessKey;
