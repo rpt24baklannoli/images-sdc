@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React, { useState, useEffect, useRef } from 'react'
-import { css, jsx } from '@emotion/core'
+import { css, jsx } from '@emotion/react'
 import Slides from './Slides.jsx'
 import Container from './Container.jsx'
 import Arrow from './Arrow.jsx'

@@ -1,5 +1,5 @@
 import React from 'react'
-/** @jsx jsx */ import { css, jsx } from '@emotion/core'
+/** @jsx jsx */ import { css, jsx } from '@emotion/react'
 
 const Arrow = ({ direction, handleClick }) => (
   <div
