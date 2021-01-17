@@ -1,4 +1,5 @@
 const express = require('express');
+require('dotenv').config();
 const bodyParser = require('body-parser');
 const s3FileUpload = require('./../db/s3FileUpload.js');
 const cors = require('cors');
