@@ -11,7 +11,7 @@
 // export default SliderContent
 /** @jsx jsx */
 import React from 'react'
-import { css, jsx } from '@emotion/react'
+import { css, jsx } from '@emotion/core'
 
 const Slides = props => (
   <div className="Slides"

@@ -1,5 +1,5 @@
 import React, {memo} from 'react'
-/** @jsx jsx */ import { css, jsx } from '@emotion/react'
+/** @jsx jsx */ import { css, jsx } from '@emotion/core'
 // import SliderContent from './SliderContent'
 
 
