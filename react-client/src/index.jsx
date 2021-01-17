@@ -15,7 +15,8 @@ let getImagesById =  ()=>{
   .then((res)=>{
     console.log('DATA ', res.data);
     ReactDOM.render(<Animation slides={res.data}/>, document.getElementById('images'));
-  });
+  })
+  .catch(err=> console.log(err));
 }
 
 getImagesById();
