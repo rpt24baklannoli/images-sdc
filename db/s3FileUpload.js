@@ -6,7 +6,7 @@ const AWS = require('aws-sdk');
 //AWS.config.loadFromPath('/Users/brian.vu/HackReactor/RPT24/fetsyItemImages/config/AWS_Config.json');
 
 
-const BUCKET_NAME = 'festy-images';
+const BUCKET_NAME = 'festy-images-sdc';
 // const IAM_USER_KEY = AWS.config.credentials.accessKeyId || process.env.accessKey;
 // const IAM_USER_SECRET = AWS.config.credentials.secretAccessKey || process.env.secretKey;
 
@@ -53,7 +53,7 @@ let uploadToS3 = (req, res)=>{
 
 async function getUrlsS3 (URL_ARRAY = []) {
 
-  const BUCKET_URL = 'https://festy-images.s3-us-west-1.amazonaws.com/';
+  const BUCKET_URL = `https://${BUCKET_NAME}.s3-us-west-1.amazonaws.com/`;
 
   AWS.config.update({
     region: 'us-west-1'
