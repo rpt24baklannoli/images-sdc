@@ -1,8 +1,10 @@
+const model = require('../model/index.js');
+
 module.exports = {
   images: {
-    get: (id) => {
+    getOne: (id) => {
       return new Promise ((resolve, reject) => {
-        model.images.get(id)
+        model.images.getOne(id)
           .then((data) => {
             resolve(data);
           })

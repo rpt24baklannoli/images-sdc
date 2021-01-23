@@ -2,7 +2,7 @@ const pool = require('../db/index.js');
 
 module.exports = {
   images: {
-    get: (item_id) => {
+    getOne: (item_id) => {
       return pool.query(`SELECT * FROM images WHERE item_id = ${item_id};`)
     },
     post: (item_id, url) => {
