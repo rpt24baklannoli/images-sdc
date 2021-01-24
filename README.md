@@ -36,8 +36,8 @@ You can change the item id(1) to whatever number you'd like to render that parti
 
 All operations will hit the following endpoint, but be determined by the type of request being made: **'/item/:item_id/images'**
 
-### Create (GET)
-Looks for the item_id provided in the url and returns an array of objects with the following shape
+### Read (GET)
+> Looks for the item_id provided in the url and returns an array of objects with the following shape
 ```
 "rows": [
         {
@@ -52,8 +52,8 @@ Looks for the item_id provided in the url and returns an array of objects with t
         },
         ...]
 ```
-### Read (POST)
-Needs the request body to have these key-value pairs:
+### Create (POST)
+> Needs the request body to have these key-value pairs:
 - (id): (the id of the item you would like to associate this image with).
 - (url): (link to image url)(string)
 ```
@@ -64,7 +64,7 @@ Needs the request body to have these key-value pairs:
 ```
 
 ### Update (PUT)
-Needs the request body to have these key-value pairs:
+> Needs the request body to have these key-value pairs:
 - (index): (id or index of image that you would like to update).
 - (url): (link to image url)(string)
 ```
@@ -75,7 +75,7 @@ Needs the request body to have these key-value pairs:
 ```
 
 ### Delete (DELETE)
-Needs the request body to have the following key-value pairs:
+> Needs the request body to have the following key-value pairs:
 - (index): (id or index of image that you would like to delete from the database table: _images_):
 
 ```
