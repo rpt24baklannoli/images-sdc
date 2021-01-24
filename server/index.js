@@ -31,7 +31,7 @@ app.get('/item/:item_id/images', (req, res)=> {
 });
 
 app.post('/item/:item_id/images', (req, res)=>{
-  const id = req.body.item_id;
+  const id = req.body.id;
   const url = req.body.url;
   controller.images.post(id, url)
     .then((response) => {
@@ -44,10 +44,10 @@ app.post('/item/:item_id/images', (req, res)=>{
 });
 
 app.put('/item/:item_id/images', (req, res)=>{
-  //const id = req.params.item_id;
+  const index = req.body.index;
+  const url = req.body.url;
   controller.images.update(index, url)
     .then((response) => {
-      console.log(response.data)
       res.send(response);
     })
     .catch((err) => {
@@ -56,7 +56,7 @@ app.put('/item/:item_id/images', (req, res)=>{
 });
 
 app.delete('/item/:item_id/images', (req, res)=>{
-  //const id = req.params.item_id;
+  const index = req.body.index;
   controller.images.delete(index)
     .then((response) => {
       console.log(response.data)
@@ -72,7 +72,7 @@ app.get('/item/images', (req, res)=>{
     if (err){
       res.status(400).send(err);
     } else {
-      res.status(200).send(data)
+      res.send(data)
     }
   });
 });
@@ -82,7 +82,7 @@ app.get('/item/images/distinct', (req, res) => {
     if (err) {
       res.status(400).send(err);
     } else {
-      res.status(200).send(data)
+      res.send(data)
     }
   });
 });
