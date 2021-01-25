@@ -1,13 +1,9 @@
 const express = require('express');
-//require('dotenv').config();
 const bodyParser = require('body-parser');
-const s3FileUpload = require('./../db/s3FileUpload.js');
-//const cors = require('cors');
 const multer  = require('multer');
+const s3FileUpload = require('./../db/s3FileUpload.js');
 const pool = require('./../db/index.js');
 const controller = require('../controller/index.js');
-const template = require('./template.js');
-
 const app = express();
 const port = 3006;
 
@@ -16,7 +12,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json());
 app.use('/item/:item_id', express.static(__dirname + '/../react-client/dist'));
 
-app.get('/item/:item_id/images', (req, res)=> {
+app.get('/item/:item_id/images', (req, res) => {
   const id = req.params.item_id;
   controller.images.getOne(id)
     .then((response) => {
@@ -27,7 +23,7 @@ app.get('/item/:item_id/images', (req, res)=> {
     });
 });
 
-app.post('/item/:item_id/images', (req, res)=>{
+app.post('/item/:item_id/images', (req, res) => {
   const id = req.body.id;
   const url = req.body.url;
   controller.images.post(id, url)
@@ -39,7 +35,7 @@ app.post('/item/:item_id/images', (req, res)=>{
     });
 });
 
-app.put('/item/:item_id/images', (req, res)=>{
+app.put('/item/:item_id/images', (req, res) => {
   const index = req.body.index;
   const url = req.body.url;
   controller.images.update(index, url)
@@ -51,11 +47,10 @@ app.put('/item/:item_id/images', (req, res)=>{
     });
 });
 
-app.delete('/item/:item_id/images', (req, res)=>{
+app.delete('/item/:item_id/images', (req, res) => {
   const index = req.body.index;
   controller.images.delete(index)
     .then((response) => {
-      console.log(response.data)
       res.send(response);
     })
     .catch((err) => {
@@ -63,24 +58,24 @@ app.delete('/item/:item_id/images', (req, res)=>{
     });
 });
 
-app.get('/item/images', (req, res)=>{
-  pool.query('SELECT * FROM images', (err, data) => {
-    if (err){
+app.get('/items/images', (req, res) => {
+  controller.images.getAll()
+    .then((response) => {
+      res.send(response.rows);
+    })
+    .catch((err) => {
       res.status(400).send(err);
-    } else {
-      res.send(data)
-    }
-  });
+    });
 });
 
 app.get('/item/images/distinct', (req, res) => {
-  pool.query('SELECT DISTINCT ON (item_id) item_id, image_url FROM images', (err, data) => {
-    if (err) {
+  controller.images.getDistinct()
+    .then((response) => {
+      res.send(response.rows);
+    })
+    .catch((err) => {
       res.status(400).send(err);
-    } else {
-      res.send(data)
-    }
-  });
+    });
 });
 
 

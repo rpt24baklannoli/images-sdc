@@ -3,7 +3,13 @@ const pool = require('../db/index.js');
 module.exports = {
   images: {
     getOne: (item_id) => {
-      return pool.query(`SELECT * FROM images WHERE item_id = ${item_id};`)
+      return pool.query(`SELECT * FROM images WHERE item_id = ${item_id};`);
+    },
+    getAll: () => {
+      return pool.query(`SELECT * FROM images;`);
+    },
+    getDistinct: () => {
+      return pool.query('SELECT DISTINCT ON (item_id) item_id, image_url FROM images');
     },
     post: (item_id, url) => {
       return pool.query(`INSERT INTO images (item_id, image_url) VALUES (${item_id}, ${url});`);

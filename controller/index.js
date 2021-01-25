@@ -13,6 +13,28 @@ module.exports = {
           });
       });
     },
+    getAll: () => {
+      return new Promise ((resolve, reject) => {
+        model.images.getAll()
+          .then((data) => {
+            resolve(data);
+          })
+          .catch((err) => {
+            reject(err)
+          });
+      });
+    },
+    getDistinct: () => {
+      return new Promise ((resolve, reject) => {
+        model.images.getDistinct()
+          .then((data) => {
+            resolve(data);
+          })
+          .catch((err) => {
+            reject(err)
+          });
+      });
+    },
     post: (id, url) => {
       return new Promise ((resolve, reject) => {
         model.images.post(id, url)
