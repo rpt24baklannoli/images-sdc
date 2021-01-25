@@ -5,16 +5,13 @@ import axios from 'axios';
 import { useParams } from 'react-router';
 
 
-let getImagesById =  ()=>{
+let getImagesById = () => {
   let url = window.location.href;
   url = url.split('/');
-  console.log('URL, ', url);
-  let id = url[4];
-
+  let id = url[4] || 1;
   axios.get(`/item/${id}/images`)
   .then((res)=>{
-    console.log('DATA ', res.data);
-    ReactDOM.render(<Animation slides={res.data}/>, document.getElementById('images'));
+    ReactDOM.render(<Animation slides={res.data.rows}/>, document.getElementById('images'));
   })
   .catch(err=> console.log(err));
 }
