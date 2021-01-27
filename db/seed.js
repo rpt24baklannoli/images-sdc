@@ -9,7 +9,7 @@ const randomNumber = (min, max) => {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-const seed =  async (numberOfItemsToSeed) => {
+const writeCSV =  async (numberOfItemsToSeed) => {
   writer.pipe(fs.createWriteStream('./db/seedData.csv'));
   let urls = await S3.getUrlsS3();
   //console.log(urls);
@@ -30,5 +30,27 @@ const seed =  async (numberOfItemsToSeed) => {
     writer.end();
 }
 
-seed();
+const insertData = async () => {
+  let csv = __dirname + '/seedData.csv';
+  let values = [csv];
+  console.log(values);
+  db.query("COPY images (item_id, image_url) FROM '/Users/gabriel.g/Desktop/fetsyItemImages/db/seedData.csv' DELIMITER ',' CSV HEADER;", (err, res) => {
+    if (err) {
+      console.log(err)
+    } else {
+      console.log('successfully inserted csv data');
+    }
+  });
+}
+
+const seed = async (records) => {
+  try {
+    await writeCSV(records);
+    await insertData();
+  } catch (err) {
+    console.log('Error seeding database: ', err);
+  }
+}
+
+seed(10);
 
