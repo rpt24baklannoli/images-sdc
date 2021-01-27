@@ -108,3 +108,5 @@ bundle.*
 
 .eslintrc.js
 .gitignore
+
+seedData.csv

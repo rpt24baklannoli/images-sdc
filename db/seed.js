@@ -20,7 +20,7 @@ const seed =  async (numberOfItemsToSeed) => {
       let randomIndex = randomNumber(0, urls.length);
       let currentValue = urls[randomIndex];
       let values = [itemId, currentValue];
-      console.log(values);
+      //console.log(values);
       writer.write(values);
       // db.query('INSERT INTO images (item_id, image_url) VALUES ($1, $2)', values, (err, data) => {
         //   if (err) { console.error(err) }
@@ -30,5 +30,5 @@ const seed =  async (numberOfItemsToSeed) => {
     writer.end();
 }
 
-seed(4);
+seed();
 
