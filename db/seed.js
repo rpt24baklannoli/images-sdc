@@ -32,9 +32,10 @@ const writeCSV =  async (numberOfItemsToSeed) => {
 
 const insertData = async () => {
   let csv = __dirname + '/seedData.csv';
-  let values = [csv];
-  console.log(values);
-  db.query("COPY images (item_id, image_url) FROM '/Users/gabriel.g/Desktop/fetsyItemImages/db/seedData.csv' DELIMITER ',' CSV HEADER;", (err, res) => {
+  let query = `COPY images (item_id, image_url) FROM '${csv}' DELIMITER ',' CSV HEADER;`
+  //console.log(query);
+  // db.query("COPY images (item_id, image_url) FROM '/Users/gabriel.g/Desktop/fetsyItemImages/db/seedData.csv' DELIMITER ',' CSV HEADER;", (err, res) => {
+  db.query(query, (err, res) => {
     if (err) {
       console.log(err)
     } else {
