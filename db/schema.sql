@@ -10,5 +10,5 @@ CREATE DATABASE fetsy;
 CREATE TABLE IF NOT EXISTS images (
   id SERIAL PRIMARY KEY,
   item_id INTEGER,
-  image_url varchar
+  image_url varchar(150)
 )
