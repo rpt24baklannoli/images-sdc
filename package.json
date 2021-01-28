@@ -7,7 +7,7 @@
     "test": "jest",
     "start": "nodemon server",
     "react-dev": "webpack --watch",
-    "db:setup": "psql < db/schema.sql && node db/seeding/dataGeneration.js",
+    "db:setup": "psql < db/schema.sql && node db/seeding/dataGen.js",
     "db:seed": "node db/seeding/seedData.js"
   },
   "repository": {

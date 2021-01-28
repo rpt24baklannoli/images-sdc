@@ -10,7 +10,7 @@ const randomNumber = (min, max) => {
 }
 
 const writeCSV =  async (numberOfItemsToSeed) => {
-  writer.pipe(fs.createWriteStream('./db/seeding/seedData.csv'));
+  writer.pipe(fs.createWriteStream('./db/seeding/seedData2.csv'));
   let urls = await S3.getUrlsS3();
 
   for (let i = 0; i < numberOfItemsToSeed; i++){
@@ -27,7 +27,7 @@ const writeCSV =  async (numberOfItemsToSeed) => {
 }
 
 //input desired number as parameter
-writeCSV();
+writeCSV(100000);
 
 
 
