@@ -23,4 +23,4 @@ const writeCSV =  async (numberOfItemsToSeed) => {
 }
 
 //input desired number as parameter
-writeCSV(10000000);
+writeCSV(100);
