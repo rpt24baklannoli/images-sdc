@@ -17,9 +17,9 @@ const writeCSV =  async (numberOfItemsToSeed) => {
       let randomIndex = randomNumber(0, urls.length);
       let currentValue = urls[randomIndex];
       writer.write(`${itemId},${currentValue}\n`);
-      }
     }
-    writer.end();
+  }
+  writer.end();
 }
 
 //input desired number as parameter
