@@ -22,7 +22,7 @@ jobs:
           username: gabriel.g
           password: ''  # context / project UI env-var reference
         environment:
-          POSTGRES_USER: postgres
+          POSTGRES_USER: gabriel.g
     # Then run your tests!
     # CircleCI will report the results back to your VCS provider.
     steps:
