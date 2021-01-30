@@ -1,14 +1,14 @@
 const axios = require ('axios');
 jest.mock('axios');
 
-describe('Verifies repsonse from calling /item/:item_id/images endpoint', () => {
+describe('Verifies repsonse from calling /items/:item_id/images endpoint', () => {
 
   beforeEach(() => {
     jest.resetAllMocks();
   });
 
   const testGetItemImages = async () => {
-    const res = await axios.get('/item/2/images');
+    const res = await axios.get('/items/2/images');
     return res.rows;
   }
 
@@ -89,12 +89,15 @@ describe('Verifies repsonse from calling /item/:item_id/images endpoint', () => 
     })
   });
 
-  test('Verifies that elements in array are objects', async () => {
+  test('Verifies that elements in array are objects and have the correct keys', async () => {
     mock();
     const data = await testGetItemImages();
-    data.forEach((element)=>{
+    data.forEach( (element) => {
       expect(typeof element).toBe('object');
-    })
+      expect(element).toHaveProperty('id');
+      expect(element).toHaveProperty('item_id');
+      expect(element).toHaveProperty('image_url');
+    });
   });
 
   test('Verifies that oject keys are the correct dataytypes', async ()=>{
