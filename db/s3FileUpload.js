@@ -48,8 +48,9 @@ let uploadToS3 = (req, res)=>{
       }
     });
   });
-
 };
+
+
 
 async function getUrlsS3 (URL_ARRAY = []) {
 

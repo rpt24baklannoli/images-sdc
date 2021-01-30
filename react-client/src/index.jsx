@@ -9,7 +9,7 @@ let getImagesById = () => {
   let url = window.location.href;
   url = url.split('/');
   let id = url[4] || 1;
-  axios.get(`/item/${id}/images`)
+  axios.get(`/items/${id}/images`)
   .then((res)=>{
     ReactDOM.render(<Animation slides={res.data.rows}/>, document.getElementById('images'));
   })
