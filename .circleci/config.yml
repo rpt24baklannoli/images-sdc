@@ -32,9 +32,10 @@ jobs:
       # - node/install-packages:
       #     pkg-manager: yarn
       - run:
-        name: install cli
-        command: sudo apt install -y postgresql-client
-
+          name: Build DB/csv
+          command: |
+            sudo apt-get update
+            sudo apt-get install postgresql-client
       - run:
           name: Build DB/csv
           command: npm run db:setup
