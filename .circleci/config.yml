@@ -31,7 +31,11 @@ jobs:
       # If you are using yarn instead npm, remove the line above and uncomment the two lines below.
       # - node/install-packages:
       #     pkg-manager: yarn
-      - run: sudo apt install -y postgresql-client
+      - run:
+        name: install cli
+        command: |
+          sudo apt install -y postgresql-client
+
       - run:
           name: Build DB/csv
           command: npm run db:setup
