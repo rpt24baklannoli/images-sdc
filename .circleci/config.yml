@@ -21,8 +21,6 @@ jobs:
         auth:
           username: gabriel.g
           password: ''  # context / project UI env-var reference
-        environment:
-          POSTGRES_USER: gabriel.g
     # Then run your tests!
     # CircleCI will report the results back to your VCS provider.
     steps:
@@ -34,6 +32,9 @@ jobs:
       # If you are using yarn instead npm, remove the line above and uncomment the two lines below.
       # - node/install-packages:
       #     pkg-manager: yarn
+      - run: sudo apt-get update
+      - run: sudo apt-get install postgresql-client-9.6
+      - run: whoami
       - run:
           name: Build DB/csv
           command: npm run db:setup
