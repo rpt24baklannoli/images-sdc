@@ -108,5 +108,5 @@ bundle.*
 
 .eslintrc.js
 .gitignore
-
+*.env
 *.csv

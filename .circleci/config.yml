@@ -19,7 +19,7 @@ jobs:
       - image: cimg/node:15.1
       - image: postgres
         environment:
-          POSTGRES_USER: gabriel.g
+          POSTGRES_USER: postgres
           POSTGRES_PASSWORD: 'postgres123'  # context / project UI env-var reference
     # Then run your tests!
     # CircleCI will report the results back to your VCS provider.
