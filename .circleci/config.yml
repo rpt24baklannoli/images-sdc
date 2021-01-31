@@ -33,8 +33,7 @@ jobs:
       #     pkg-manager: yarn
       - run:
         name: install cli
-        command: |
-          sudo apt install -y postgresql-client
+        command: sudo apt install -y postgresql-client
 
       - run:
           name: Build DB/csv
