@@ -59,15 +59,15 @@ app.delete('/items/:item_id/images/:image_id', (req, res) => {
     });
 });
 
-app.get('/items/images', (req, res) => {
-  controller.images.getAll()
-    .then((response) => {
-      res.send(response.rows);
-    })
-    .catch((err) => {
-      res.status(400).send(err);
-    });
-});
+// app.get('/items/images', (req, res) => {
+//   controller.images.getAll()
+//     .then((response) => {
+//       res.send(response.rows);
+//     })
+//     .catch((err) => {
+//       res.status(400).send(err);
+//     });
+// });
 
 app.get('/items/images/distinct', (req, res) => {
   controller.images.getDistinct()
