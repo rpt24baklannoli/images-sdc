@@ -8,6 +8,8 @@ CREATE TABLE IF NOT EXISTS images (
   image_url varchar(150)
 )
 
+CREATE INDEX inx_item_id ON images(item_id);
+
 
 -- DROP DATABASE IF EXISTS fetsy;
 -- CREATE DATABASE fetsy;
