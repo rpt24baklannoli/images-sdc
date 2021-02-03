@@ -37,6 +37,7 @@ jobs:
           command: |
             sudo apt-get update
             sudo apt-get install postgresql-client
+            pwd
       - run:
           name: Build DB/csv
           command: npm run db:setup
