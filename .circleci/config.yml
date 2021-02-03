@@ -18,14 +18,13 @@ jobs:
     docker:
       - image: cimg/node:15.1
         environment:
-            PGHOST: 127.0.0.1
-            PGUSER: gabriel.g
-            NODE_ENV: test
+            # PGHOST: 127.0.0.1
+            PGUSER: rooot
       - image: circleci/postgres:9.6.2-alpine
         environment:
           POSTGRES_USER: gabriel.g
           POSTGRES_PASSWORD: ''
-          POSTGRES_DB: gabriel.g  # context / project UI env-var reference
+          POSTGRES_DB: rooot  # context / project UI env-var reference
     # Then run your tests!
     # CircleCI will report the results back to your VCS provider.
     steps:
