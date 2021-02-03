@@ -33,7 +33,7 @@ jobs:
       # - node/install-packages:
       #     pkg-manager: yarn
       - run:
-          name: Install postgress
+          name: Install postgress client
           command: |
             sudo apt-get update
             sudo apt-get install postgresql-client
