@@ -11,6 +11,7 @@ let getImagesById = () => {
   let id = url[4] || 1;
   axios.get(`/items/${id}/images`)
   .then((res)=>{
+    console.log(res);
     ReactDOM.render(<Animation slides={res.data.rows}/>, document.getElementById('images'));
   })
   .catch(err=> console.log(err));
