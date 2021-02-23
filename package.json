@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "start": "nodemon server/start.js",
-    "react-dev": "webpack --watch",
+    "build": "webpack --watch",
     "db:setup": "psql < ./db/schema.sql && node --max-old-space-size=8192 ./db/seeding/dataGen.js",
     "db:seed": "node ./db/seeding/seedPSQL.js"
   },
