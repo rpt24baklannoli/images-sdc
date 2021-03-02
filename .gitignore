@@ -110,3 +110,6 @@ bundle.*
 .gitignore
 *.env
 *.csv
+*.pem
+
+newrelic.js

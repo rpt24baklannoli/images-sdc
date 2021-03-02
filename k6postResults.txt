@@ -1,0 +1,134 @@
+####################### 1 RPS
+
+          /\      |‾‾| /‾‾/   /‾‾/
+     /\  /  \     |  |/  /   /  /
+    /  \/    \    |     (   /   ‾‾\
+   /          \   |  |\  \ |  (‾)  |
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: k6post.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 200 max VUs, 1m30s max duration (incl. graceful stop):
+           * constant_request_rate: 1.00 iterations/s for 1m0s (maxVUs: 20-200, gracefulStop: 30s)
+
+
+running (1m00.0s), 000/020 VUs, 61 complete and 0 interrupted iterations
+constant_request_rate ✓ [ 100% ] 020/020 VUs  1m0s  1 iters/s
+     data_received..............: 102 kB 1.7 kB/s
+     data_sent..................: 11 kB  179 B/s
+     http_req_blocked...........: avg=576.83µs min=218µs  med=570µs  max=1.6ms    p(90)=736µs   p(95)=1.14ms
+     http_req_connecting........: avg=416.21µs min=166µs  med=438µs  max=1.03ms   p(90)=508µs   p(95)=609µs
+     http_req_duration..........: avg=8.84ms   min=2.81ms med=6.98ms max=99.02ms  p(90)=11.95ms p(95)=14.67ms
+     http_req_receiving.........: avg=121.68µs min=53µs   med=121µs  max=311µs    p(90)=173µs   p(95)=192µs
+     http_req_sending...........: avg=163.47µs min=47µs   med=139µs  max=1.09ms   p(90)=223µs   p(95)=252µs
+     http_req_tls_handshaking...: avg=0s       min=0s     med=0s     max=0s       p(90)=0s      p(95)=0s
+     http_req_waiting...........: avg=8.56ms   min=2.64ms med=6.73ms max=98.81ms  p(90)=11.66ms p(95)=14.39ms
+     http_reqs..................: 61     1.015978/s
+     iteration_duration.........: avg=9.74ms   min=3.18ms med=7.9ms  max=100.95ms p(90)=13.38ms p(95)=15.73ms
+     iterations.................: 61     1.015978/s
+     vus........................: 20     min=20 max=20
+     vus_max....................: 20     min=20 max=20
+
+####################### 10 RPS
+
+          /\      |‾‾| /‾‾/   /‾‾/
+     /\  /  \     |  |/  /   /  /
+    /  \/    \    |     (   /   ‾‾\
+   /          \   |  |\  \ |  (‾)  |
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: k6post.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 200 max VUs, 1m30s max duration (incl. graceful stop):
+           * constant_request_rate: 10.00 iterations/s for 1m0s (maxVUs: 20-200, gracefulStop: 30s)
+
+
+running (1m00.0s), 000/020 VUs, 600 complete and 0 interrupted iterations
+constant_request_rate ✓ [ 100% ] 020/020 VUs  1m0s  10 iters/s
+     data_received..............: 1.0 MB 17 kB/s
+     data_sent..................: 106 kB 1.8 kB/s
+     http_req_blocked...........: avg=31.2µs   min=3µs    med=8µs    max=2.02ms   p(90)=17µs    p(95)=33.09µs
+     http_req_connecting........: avg=16.49µs  min=0s     med=0s     max=1.33ms   p(90)=0s      p(95)=0s
+     http_req_duration..........: avg=9.57ms   min=2.52ms med=6.88ms max=177ms    p(90)=12.06ms p(95)=17.63ms
+     http_req_receiving.........: avg=136.97µs min=46µs   med=122µs  max=1.98ms   p(90)=205µs   p(95)=262.19µs
+     http_req_sending...........: avg=71.76µs  min=20µs   med=59µs   max=1.28ms   p(90)=115µs   p(95)=143.24µs
+     http_req_tls_handshaking...: avg=0s       min=0s     med=0s     max=0s       p(90)=0s      p(95)=0s
+     http_req_waiting...........: avg=9.36ms   min=2.44ms med=6.66ms max=176.91ms p(90)=11.87ms p(95)=17.36ms
+     http_reqs..................: 600    9.9951/s
+     iteration_duration.........: avg=10.05ms  min=2.75ms med=7.37ms max=177.23ms p(90)=12.49ms p(95)=18.33ms
+     iterations.................: 600    9.9951/s
+     vus........................: 20     min=20 max=20
+     vus_max....................: 20     min=20 max=20
+
+####################### 100 RPS
+
+          /\      |‾‾| /‾‾/   /‾‾/
+     /\  /  \     |  |/  /   /  /
+    /  \/    \    |     (   /   ‾‾\
+   /          \   |  |\  \ |  (‾)  |
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: k6post.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 200 max VUs, 1m30s max duration (incl. graceful stop):
+           * constant_request_rate: 100.00 iterations/s for 1m0s (maxVUs: 20-200, gracefulStop: 30s)
+
+
+running (1m00.0s), 000/021 VUs, 5998 complete and 0 interrupted iterations
+constant_request_rate ✓ [ 100% ] 021/021 VUs  1m0s  100 iters/s
+     data_received..............: 10 MB  167 kB/s
+     data_sent..................: 1.1 MB 18 kB/s
+     dropped_iterations.........: 3      0.049975/s
+     http_req_blocked...........: avg=9.09µs  min=2µs    med=7µs    max=1.65ms   p(90)=11µs   p(95)=15µs
+     http_req_connecting........: avg=1.05µs  min=0s     med=0s     max=1.55ms   p(90)=0s     p(95)=0s
+     http_req_duration..........: avg=6.55ms  min=1.28ms med=3.88ms max=227.68ms p(90)=7.79ms p(95)=15.56ms
+     http_req_receiving.........: avg=110.3µs min=13µs   med=97µs   max=1.37ms   p(90)=168µs  p(95)=215µs
+     http_req_sending...........: avg=53.83µs min=12µs   med=52µs   max=903µs    p(90)=82µs   p(95)=104µs
+     http_req_tls_handshaking...: avg=0s      min=0s     med=0s     max=0s       p(90)=0s     p(95)=0s
+     http_req_waiting...........: avg=6.38ms  min=1.19ms med=3.68ms max=227.59ms p(90)=7.55ms p(95)=15.43ms
+     http_reqs..................: 5998   99.916272/s
+     iteration_duration.........: avg=6.9ms   min=1.44ms med=4.28ms max=227.89ms p(90)=8.15ms p(95)=15.94ms
+     iterations.................: 5998   99.916272/s
+     vus........................: 21     min=20 max=21
+     vus_max....................: 21     min=20 max=21
+
+####################### 1000 RPS
+
+          /\      |‾‾| /‾‾/   /‾‾/
+     /\  /  \     |  |/  /   /  /
+    /  \/    \    |     (   /   ‾‾\
+   /          \   |  |\  \ |  (‾)  |
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: k6post.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 200 max VUs, 1m30s max duration (incl. graceful stop):
+           * constant_request_rate: 1000.00 iterations/s for 1m0s (maxVUs: 20-200, gracefulStop: 30s)
+
+WARN[0005] Insufficient VUs, reached 200 active VUs and cannot initialize more  executor=constant-arrival-rate scenario=constant_request_rate
+running (1m00.1s), 000/200 VUs, 38960 complete and 0 interrupted iterations
+constant_request_rate ✓ [ 100% ] 200/200 VUs  1m0s  1000 iters/
+
+     data_received..............: 65 MB  1.1 MB/s
+     data_sent..................: 6.9 MB 115 kB/s
+     dropped_iterations.........: 21041  349.823409/s
+     http_req_blocked...........: avg=7.44µs   min=1µs     med=3µs      max=9.46ms  p(90)=5µs      p(95)=9µs
+     http_req_connecting........: avg=1.88µs   min=0s      med=0s       max=7.08ms  p(90)=0s       p(95)=0s
+     http_req_duration..........: avg=278.87ms min=14.36ms med=218.97ms max=1.27s   p(90)=524.6ms  p(95)=674ms
+     http_req_receiving.........: avg=54.82µs  min=12µs    med=41µs     max=5.29ms  p(90)=82µs     p(95)=115µs
+     http_req_sending...........: avg=33.18µs  min=8µs     med=22µs     max=87.18ms p(90)=42µs     p(95)=59µs
+     http_req_tls_handshaking...: avg=0s       min=0s      med=0s       max=0s      p(90)=0s       p(95)=0s
+     http_req_waiting...........: avg=278.78ms min=14.28ms med=218.87ms max=1.27s   p(90)=524.47ms p(95)=673.92ms
+     http_reqs..................: 38960  647.741078/s
+     iteration_duration.........: avg=279.09ms min=14.56ms med=219.17ms max=1.27s   p(90)=524.93ms p(95)=674.39ms
+     iterations.................: 38960  647.741078/s
+     vus........................: 200    min=66 max=200
+     vus_max....................: 200    min=66 max=200
