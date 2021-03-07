@@ -132,3 +132,11 @@ constant_request_rate ✓ [ 100% ] 200/200 VUs  1m0s  1000 iters/
      iterations.................: 34726  576.582361/s
      vus........................: 200    min=69 max=200
      vus_max....................: 200    min=69 max=200
+
+
+
+
+
+POSTGRE
+---------
+sdcfetsy

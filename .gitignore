@@ -111,5 +111,5 @@ bundle.*
 *.env
 *.csv
 *.pem
-
+*.sh
 newrelic.js
