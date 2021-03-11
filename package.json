@@ -45,6 +45,7 @@
     "react-dom": "^17.0.1",
     "react-router": "^5.2.0",
     "react-toggle-switch": "^3.0.4",
+    "redis": "^3.0.2",
     "webpack": "^5.4.0"
   },
   "devDependencies": {
