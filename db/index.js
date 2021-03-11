@@ -11,7 +11,7 @@ require('dotenv').config({ path: '../config/.env' });
 
 const pool = new Pool({
   user: 'postgres',
-  host: '13.57.236.157',
+  host: '54.153.21.201',
   database: 'fetsy',
   password: 'sdcfetsy',
   port: 5432
